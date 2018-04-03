@@ -1,10 +1,14 @@
+.splash {
+    position: relative;
+}
+
 .splash img {
     display: block;
     width: 600px;
     margin: 100px auto;
 }
 
-.splash .instructions {
+.splash .instructionsBtn {
     display: block;
     width: 600px;
     height: 50px;
@@ -45,7 +49,7 @@
     font-size: 1.9rem; 
 }
 
-/* Shutter In Vertical */
+ /*Shutter In Vertical */
 .hvr-shutter-in-vertical {
  display: inline-block;
  vertical-align: middle;
@@ -85,10 +89,48 @@
  color: white;
  cursor: pointer;
  outline: none;
- 
+
 }
 
 .hvr-shutter-in-vertical:hover:before, .hvr-shutter-in-vertical:focus:before, .hvr-shutter-in-vertical:active:before {
  -webkit-transform: scaleY(0);
  transform: scaleY(0);
+}
+
+.instructions {
+    visibility: hidden;
+    width: 800px;
+    position: absolute;
+    padding: 30px;
+    left: 100px;
+    top: 100px;
+    border-radius: 5px;
+    background-color: #b3ff0f;
+}
+
+.instructions button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.6rem;
+   width: 500px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    background-color: #b3ff0f;;
+}
+
+.instructions button:hover {
+    cursor: pointer;
+    color: #ededed;
+    text-shadow: 2px 2px 2px #000000, 2px -2px 2px #000000, -2px -2px 2px #000000, -2px 2px 2px #000000;
+}
+
+.instructions button:active {
+    font-size: 1.5rem;
+    outline: none;
+}
+
+.instructionsShow {
+    visibility: visible;
+
 }

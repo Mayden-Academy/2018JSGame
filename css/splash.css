@@ -84,6 +84,8 @@
 .hvr-shutter-in-vertical:hover, .hvr-shutter-in-vertical:focus, .hvr-shutter-in-vertical:active {
  color: white;
  cursor: pointer;
+ outline: none;
+ 
 }
 
 .hvr-shutter-in-vertical:hover:before, .hvr-shutter-in-vertical:focus:before, .hvr-shutter-in-vertical:active:before {

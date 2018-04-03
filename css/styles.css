@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
 }
@@ -6,6 +5,7 @@
 body {
     font-family: 'Press Start 2P', cursive;
 }
+
 .container {
     width: 1000px;
     height: 800px;
@@ -22,5 +22,3 @@ body {
 .col-1-2 {
     width: 50%;
 }
-
-

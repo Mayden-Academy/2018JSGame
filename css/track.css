@@ -1,0 +1,26 @@
+
+.container {
+    width: 800px;
+}
+
+svg {
+    border: 1px solid black;
+}
+
+rect {
+    fill: #000000;
+}
+
+.path {
+    fill: #ffffff;
+}
+
+rect.finish {
+    fill: #ff1c1c;
+}
+
+button {
+    position: relative;
+    top: 780px;
+    left: 480px;
+}

@@ -1,0 +1,25 @@
+.splash h1 {
+    width: 600px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.splash .instructions {
+    display: block;
+    width: 600px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.splash .game-level img {
+    display: block;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.splash .game-level h4 {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+

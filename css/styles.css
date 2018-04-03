@@ -1,13 +1,22 @@
 
-
 * {
     box-sizing: border-box;
 }
 
-
-.game {
+.container {
     width: 1000px;
     height: 800px;
     margin: 0 auto;
-    border: 1px solid black;    
+    border: 1px solid black;
 }
+
+[class*="col-"] {
+    float: left;
+}
+
+.col-1-2 {
+    width: 50%;
+    background-color: blue;
+}
+
+

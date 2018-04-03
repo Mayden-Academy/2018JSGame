@@ -1,11 +1,10 @@
 
 $('#pullInstructions').click(function() {
     $('#instructions').load('instructions.html');
-    $('#instructions').addClass('show');
+    $('#instructions').addClass('instructionsShow');
 });
 
-$('body').on('click', '#closeInstructions' , function() {
-    console.log ('boom')
-    $('#instructions').removeClass('show');
+$('body').on('click', '#instructionsClose' , function() {
+    $('#instructions').removeClass('instructionsShow');
 });
 

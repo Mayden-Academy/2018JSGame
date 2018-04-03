@@ -15,8 +15,12 @@
             fill:#000000;
         }
 
-        rect.path {
+        .path {
             fill:#ffffff;
+        }
+
+        rect.finish {
+            fill: #ff1c1c;
         }
 
         button {
@@ -32,8 +36,8 @@
         <svg width="1000" height="800">
             <!--Background-->
             <rect x="0" y="0" width="1000" height="800" class="bg" />
-            <rect x="0" y="50" width="290" height="30" />
-            <rect x="0" y="10" width="950" height="30" class="path" />
+            <rect x="40" y="10" width="910" height="30" class="path" />
+            <rect x="0" y="10" width="40" height="30" class="path finish" />
             <rect x="260" y="10" width="30" height="200" class="path" />
             <rect x="940" y="10" width="30" height="400" class="path" />
             <rect x="20" y="400" width="950" height="30" class="path" />
@@ -43,7 +47,8 @@
             <rect x="20" y="400" width="30" height="380" class="path" />
             <rect x="20" y="750" width="300" height="30" class="path" />
             <rect x="280" y="725" width="360" height="30" class="path" />
-            <rect x="600" y="750" width="400" height="30" class="path" />
+            <rect x="600" y="750" width="360" height="30" class="path" />
+            <rect x="960" y="750" width="40" height="30" class="path finish" />
             <rect x="50" y="200" width="240" height="30" class="path" />
             <rect x="50" y="200" width="20" height="200" class="path" />
         </svg>

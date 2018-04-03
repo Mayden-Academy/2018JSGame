@@ -1,8 +1,11 @@
-var objToSend = {
-    "email": "sydney@fife",
-    "password": "pistol"
-}
 
-$.post('https://reqres.in/api/register', objToSend, function (data) {
-    console.log(data)
-})
+$('#pullInstructions').click(function() {
+    $('#instructions').load('instructions.html');
+    $('#instructions').addClass('show');
+});
+
+$('body').on('click', '#closeInstructions' , function() {
+    console.log ('boom')
+    $('#instructions').removeClass('show');
+});
+

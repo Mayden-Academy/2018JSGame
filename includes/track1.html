@@ -4,7 +4,6 @@
     <title>Track  1 Layout</title>
     <style>
         .container {
-            /*margin: 0 auto;*/
             width: 800px;
         }
 
@@ -20,17 +19,19 @@
             fill:#ffffff;
         }
 
-        rect.path.red {
-            fill:red;
+        button {
+            position: relative;
+            top: 780px;
+            left: 480px;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <button>Return</button>
         <svg width="1000" height="800">
             <!--Background-->
             <rect x="0" y="0" width="1000" height="800" class="bg" />
-
             <rect x="0" y="50" width="290" height="30" />
             <rect x="0" y="10" width="950" height="30" class="path" />
             <rect x="260" y="10" width="30" height="200" class="path" />
@@ -40,16 +41,11 @@
             <rect x="760" y="600" width="120" height="30" class="path" />
             <rect x="740" y="600" width="30" height="150" class="path" />
             <rect x="20" y="400" width="30" height="380" class="path" />
-
             <rect x="20" y="750" width="300" height="30" class="path" />
             <rect x="280" y="725" width="360" height="30" class="path" />
             <rect x="600" y="750" width="400" height="30" class="path" />
-
-
             <rect x="50" y="200" width="240" height="30" class="path" />
             <rect x="50" y="200" width="20" height="200" class="path" />
-
-            <!--<rect x="260" y="400" width="15" height="15" class="finish" />-->
         </svg>
     </div>
 </body>

@@ -1,16 +1,20 @@
-.track1 {
+.track1,
+.track2 {
     position: relative;
 }
 
-.track1 rect {
+.track1 rect,
+.track2 rect {
     fill: #000000;
 }
 
-.track1 .path {
-    fill: #ffffff;
+.track1 rect.path,
+.track2 rect.path {
+    fill:#ffffff;
 }
 
-.track1 rect.finish {
+.track1 .finish,
+.track2 .finish {
     fill: #ff1c1c;
 }
 
@@ -21,19 +25,5 @@
     left: 450px;
 }
 
-.track2 {
-    /*margin: 0 auto;*/
-    width: 800px;
-}
-.track2 svg {
-    border: 1px solid black;
-}
-.track2 rect {
-    fill:#000000;
-}
-.track2 rect.path {
-    fill:#ffffff;
-}
-.track2 .finish {
-    fill: red;
-}
+
+

@@ -1,6 +1,9 @@
 // 1 We want to select 2 links ON CLICK
 $('.trackLink').click(function(e) {
     console.log(e.target)
+    var splash = $('#splash')
+    splash.css('display', 'none')
+    console.log(splash)
 })
 
 

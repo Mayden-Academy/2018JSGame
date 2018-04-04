@@ -1,26 +1,25 @@
-
-.container {
-    width: 800px;
+.track {
+    position: relative;
 }
 
-svg {
-    border: 1px solid black;
-}
-
-rect {
+.track rect {
     fill: #000000;
 }
 
-.path {
-    fill: #ffffff;
+.track rect.path {
+    fill:#ffffff;
 }
 
-rect.finish {
+.track .finish {
     fill: #ff1c1c;
 }
 
-button {
-    position: relative;
-    top: 780px;
-    left: 480px;
+.track button {
+    position: absolute;
+    bottom: 10px;
+    width: 100px;
+    left: 450px;
 }
+
+
+

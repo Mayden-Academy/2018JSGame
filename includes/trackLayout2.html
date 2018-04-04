@@ -1,32 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Track  2 Layout</title>
-    <style>
-        .container {
-            /*margin: 0 auto;*/
-            width: 800px;
-        }
-        svg {
-            border: 1px solid black;
-        }
-        rect {
-            fill:#000000;
-        }
-        rect.path {
-            fill:#ffffff;
-        }
-        .finish {
-            fill: red;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <svg width="1000" height="800">
-        <!--Background-->
-        <rect x="0" y="0" width="1000" height="800"/>
 
+<div id="track2" class="track">
+    <button class="trackReturn" data-track="2">Return</button>
+    <svg width="1000" height="800">
+        <rect x="0" y="0" width="1000" height="800"/>
         <rect x="0" y="10" width="250" height="60" class="path" />
         <rect x="250" y="10" width="50" height="220" class="path" />
         <rect x="50" y="190" width="240" height="40" class="path" />
@@ -44,5 +20,3 @@
         <rect x="950" y="700" width="50" height="50" class="finish" />
     </svg>
 </div>
-</body>
-</html>

@@ -1,30 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/splash.css">
+    <link rel="stylesheet" type="text/css" href="css/track.css">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="splash">
-            <img src="assets/gameTitle.png" alt="Mayrio Kart">
+    <main id="container" class="container">
+        <div id="splash" class="splash">
+            <img class="titleImage" src="assets/gameTitle.png" alt="Mayrio Kart">
             <button id="pullInstructions"  class="instructionsBtn">
                 Instructions
             </button>
-            <div class=" gameLevel">
-            <div class="instructions" id="instructions"></div>
+            <div class="gameLevel">
+            <div class="instructions"></div>
                 <img src="assets/cat.jpg" alt="level 1">
-                <h2><a href="#">Level 1</a></h2>
+                <h2><a class="trackLink" data-track="1" href="#">Level 1</a></h2>
             </div>
             <div class="gameLevel">
                 <img src="assets/cat.jpg" alt="level 2">
-                <h2><a href="#">Level 2</a></h2>
+                <h2><a class="trackLink" data-track="2" href="#">Level 2</a></h2>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script src="instructions.js"></script>
+<script src="js/instructions.js"></script>
+<script src="js/loadTrack.js"></script>
 </html>

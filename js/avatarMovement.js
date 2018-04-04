@@ -75,7 +75,6 @@ function keyDownHandler(e) {
             playerBOrientation='S';
             break;
         default:
-            //switch needs a default.. not sure what this should be??
     }
 }
 
@@ -94,9 +93,7 @@ function keyUpHandler(e) {
         case 83:
             stopMovement(playerB);
             break;
-
         default:
-            //switch needs a default.. not sure what this should be??
     }
 }
 
@@ -137,5 +134,5 @@ function stopMovement (player){
 
 //event listener for player's avatar
 document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
+document.addEventListener("keyup", keyUpHandler, false); 
 

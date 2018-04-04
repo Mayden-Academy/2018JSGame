@@ -1,21 +1,21 @@
 
-
+//player A variables
 var playerAx = 150;
 var playerAy = 150;
 var playerAHeight = 50;
 var playerAWidth = 50;
 
-
+//Player B variables
 var playerBx = 550;
 var playerBy = 550;
 var playerBHeight = 50;
 var playerBWidth = 50;
 
-
+//create players
 var playerA = drawPlayer(playerAx, playerAy, playerAHeight, playerAWidth, 'pink', 'playerA');
 var playerB = drawPlayer(playerBx, playerBy, playerBHeight, playerBWidth, 'blue', 'playerB');
 
-
+//gameplay variables
 var distance = 1000;
 var time = 3000;
 
@@ -65,7 +65,7 @@ function keyDownHandler(e) {
             moveDown($playerB);
             break;
         default:
-            downPressed = false;            //switch needs a default.. not sure what this should be??
+            //switch needs a default.. not sure what this should be??
     }
 }
 
@@ -86,7 +86,7 @@ function keyUpHandler(e) {
             break;
 
         default:
-            downPressed = false;            //switch needs a default.. not sure what this should be??
+            //switch needs a default.. not sure what this should be??
     }
 }
 
@@ -122,8 +122,6 @@ function moveDown($player) {
         $player.animate({y: "+="+distance}, time ,'linear');
     }
 }
-
-
 
 function stopMovement (player){
     $(player).removeClass('moving');

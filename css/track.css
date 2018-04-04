@@ -20,3 +20,20 @@
     width: 100px;
     left: 450px;
 }
+
+.track2 {
+    /*margin: 0 auto;*/
+    width: 800px;
+}
+.track2 svg {
+    border: 1px solid black;
+}
+.track2 rect {
+    fill:#000000;
+}
+.track2 rect.path {
+    fill:#ffffff;
+}
+.track2 .finish {
+    fill: red;
+}

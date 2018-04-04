@@ -2,15 +2,15 @@
     position: relative;
 }
 
-rect {
+.track1 rect {
     fill: #000000;
 }
 
-.path {
+.track1 .path {
     fill: #ffffff;
 }
 
-rect.finish {
+.track1 rect.finish {
     fill: #ff1c1c;
 }
 

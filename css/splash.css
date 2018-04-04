@@ -23,7 +23,6 @@
 
 .splash .instructionsBtn:hover {
    cursor: pointer;
-   background-color: #dddddd;
    text-shadow: 2px 2px 2px #000000, 2px -2px 2px #000000, -2px -2px 2px #000000, -2px 2px 2px #000000;
    box-shadow: 1px 1px 2px #000000, 1px -1px 2px #000000, -1px -1px 2px #000000, -1px 1px 2px #000000;
 }
@@ -80,8 +79,6 @@
 .instructions button {
     font-family: 'Press Start 2P', cursive;
     font-size: 1.6rem;
-    width: 500px;
-    text-align: center;
     display: block;
     margin: 0 auto;
     border: none;

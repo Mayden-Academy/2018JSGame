@@ -4,6 +4,10 @@ $('.trackLink').click(function(e) {
         container = $('#container')
         
     splash.css('display', 'none')
-    container.load('includes/track1.html');
+
+    let link = e.target.dataset.track
+    console.log(link)
+    if  (link === '1') container.load('includes/trackLayout1.html')
+    if  (link === '2') container.load('includes/trackLayout2.html')
 })
 

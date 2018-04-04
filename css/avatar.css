@@ -31,3 +31,7 @@
 .down {
     transform: rotate(90deg);
 }
+
+#carColor {
+    fill: gold;
+}

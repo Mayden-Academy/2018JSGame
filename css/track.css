@@ -1,10 +1,5 @@
-
-.container {
-    width: 800px;
-}
-
-svg {
-    border: 1px solid black;
+.track1 {
+    position: relative;
 }
 
 rect {
@@ -19,8 +14,9 @@ rect.finish {
     fill: #ff1c1c;
 }
 
-button {
-    position: relative;
-    top: 780px;
-    left: 480px;
+.track1 button {
+    position: absolute;
+    bottom: 10px;
+    width: 100px;
+    left: 450px;
 }

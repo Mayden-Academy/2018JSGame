@@ -1,24 +1,20 @@
-.track1,
-.track2 {
+.track {
     position: relative;
 }
 
-.track1 rect,
-.track2 rect {
+.track rect {
     fill: #000000;
 }
 
-.track1 rect.path,
-.track2 rect.path {
+.track rect.path {
     fill:#ffffff;
 }
 
-.track1 .finish,
-.track2 .finish {
+.track .finish {
     fill: #ff1c1c;
 }
 
-.track1 button {
+.track button {
     position: absolute;
     bottom: 10px;
     width: 100px;

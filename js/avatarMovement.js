@@ -4,12 +4,14 @@ var playerAx = 150;
 var playerAy = 150;
 var playerAHeight = 50;
 var playerAWidth = 50;
+var playerBOrientation='E';
 
 //Player B variables
 var playerBx = 550;
 var playerBy = 550;
 var playerBHeight = 50;
 var playerBWidth = 50;
+var playerAOrientation='w';
 
 //create players
 var playerA = drawPlayer(playerAx, playerAy, playerAHeight, playerAWidth, 'pink', 'playerA');
@@ -41,28 +43,36 @@ function keyDownHandler(e) {
     switch(e.keyCode) {
         case 37:
             moveLeft($playerA);
+            playerAOrientation='W';
             break;
         case 39:
             moveRight($playerA);
+            playerAOrientation='E';
             break;
         case 38:
             moveUp($playerA);
+            playerAOrientation='N';
             break;
         case 40:
             moveDown($playerA);
+            playerAOrientation='S';
             break;
 
         case 65:
             moveLeft($playerB);
+            playerBOrientation='W';
             break;
         case 68:
             moveRight($playerB);
+            playerBOrientation='E';
             break;
         case 87:
             moveUp($playerB);
+            playerBOrientation='N';
             break;
         case 83:
             moveDown($playerB);
+            playerBOrientation='S';
             break;
         default:
             //switch needs a default.. not sure what this should be??
@@ -93,7 +103,6 @@ function keyUpHandler(e) {
 
 function moveLeft($player) {
     if (!$player.hasClass('moving')) {
-        console.log('start');
         $player.addClass('moving');
         $player.animate({x: "-="+distance}, time ,'linear');
     }
@@ -101,7 +110,6 @@ function moveLeft($player) {
 
 function moveRight($player) {
     if (!$player.hasClass('moving')) {
-        console.log('start');
         $player.addClass('moving');
         $player.animate({x: "+="+distance}, time ,'linear');
     }
@@ -109,7 +117,6 @@ function moveRight($player) {
 
 function moveUp($player) {
     if (!$player.hasClass('moving')) {
-        console.log('start');
         $player.addClass('moving');
         $player.animate({y: "-="+distance}, time ,'linear');
     }
@@ -117,7 +124,6 @@ function moveUp($player) {
 
 function moveDown($player) {
     if (!$player.hasClass('moving')) {
-        console.log('start');
         $player.addClass('moving');
         $player.animate({y: "+="+distance}, time ,'linear');
     }

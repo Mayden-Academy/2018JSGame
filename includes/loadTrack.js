@@ -1,13 +1,16 @@
 
 $('.trackLink').click(function(e) {
-    var splash = $('#splash'),
+    var link = e.target.dataset.track,
+        splash = $('#splash'),
         container = $('#container')
+        splash.css('display', 'none')
         
-    splash.css('display', 'none')
-
-    let link = e.target.dataset.track
-    console.log(link)
-    if  (link === '1') container.load('includes/trackLayout1.html')
-    if  (link === '2') container.load('includes/trackLayout2.html')
+    if  (link === '1') container.append($('<div>').load('includes/trackLayout1.html'))
+    if  (link === '2') container.append($('<div>').load('includes/trackLayout2.html'))
+   
 })
 
+$('body').on('click', '.trackReturn', function(e) {
+    $('.track').css('display', 'none')
+    $('#splash').css('display', 'block')
+})

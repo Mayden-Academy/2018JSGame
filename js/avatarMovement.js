@@ -76,7 +76,8 @@ function moveLeft($player) {
             {duration: time,
                 easing: 'linear',
                 step: function(now, fx) {
-                    var left = $player.position().left
+                    var left = $player.attr('x')
+                    console.log(left);
                     if (left < 0) {
                         console.log('you dead')
                     }
@@ -92,7 +93,7 @@ function moveRight($player) {
                 easing: 'linear',
                 step: function(now, fx) {
                     var right = $player.position().left + $player.width()
-                    if (right > 800) {
+                    if (right > 1000) {
                         console.log('you dead')
                     }
                 }});
@@ -122,9 +123,8 @@ function moveDown($player) {
 
                 var down = $player.position().top + $player.height()
 
-                console.log(down)
 
-                if (down > 600) {
+                if (down > 800) {
                     console.log('you dead')
                 }
             }});
@@ -140,10 +140,11 @@ function myCountdown() {
     var timer = setInterval(function(){
         if (countdownStart > 0) {
             $("#timerP").text(countdownStart);
+            console.log(countdownStart);
             countdownStart--;
         } else {
             clearInterval(timer);
-            $("#timerDiv").toggle();
+            $("#timerDiv").css('display', 'none');
             startGame = true;
             $(document).trigger('myCustomEvent');
         }

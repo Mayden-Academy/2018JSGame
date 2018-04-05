@@ -28,6 +28,7 @@ main {
     height: 500px;
     border: 1px solid black;
     text-align: center;
+    background-color: #0000FF;
 }
 
 .seconds {
@@ -39,3 +40,4 @@ main {
 .face{
     position: relative;
 }
+

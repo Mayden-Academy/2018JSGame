@@ -19,3 +19,19 @@ main {
 .ie .splash {
     background-color: #0000FF;
 }
+
+.sqrBox {
+    position: absolute;
+    top: 50px;
+    left: 180px;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.seconds {
+    font-size: 25rem;
+    color: darkred;
+    margin: 0;
+}

@@ -8,6 +8,8 @@ $('.gameLevel').on('collision', function (player) {
 
 $('body').on('click', '#btnRestart' , function() {
     $('#restart').removeClass('restartShow')
+    $('.track').css('display', 'none')
+    $('#splash').css('display', 'block')
 })
 
 setInterval(function () {
@@ -22,3 +24,4 @@ function winnerPopup(playerWon) {
             $('<h1 class="won">' + playerWon + '</h1>').insertAfter('#popup')
         }, 500)
 }
+

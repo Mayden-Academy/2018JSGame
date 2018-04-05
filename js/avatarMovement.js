@@ -71,28 +71,28 @@ function orientation(player, direction) {
 function moveLeft($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
-        $player.animate({x: "-=" + distance}, time ,'linear');
+        $player.animate({svgX: "-=" + distance}, time ,'linear');
     }
 }
 
 function moveRight($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
-        $player.animate({x: "+=" + distance}, time ,'linear');
+        $player.animate({svgX: "+=" + distance}, time ,'linear');
     }
 }
 
 function moveUp($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
-        $player.animate({y: "-=" + distance}, time ,'linear');
+        $player.animate({svgY: "-=" + distance}, time ,'linear');
     }
 }
 
 function moveDown($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
-        $player.animate({y: "+=" + distance}, time ,'linear');
+        $player.animate({svgY: "+=" + distance}, time ,'linear');
     }
 }
 
@@ -128,3 +128,5 @@ $(document).on('myCustomEvent', function () {
 $(document).on("keypress", function (){
         myCountdown();
 });
+
+

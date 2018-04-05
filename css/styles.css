@@ -38,3 +38,7 @@ main {
     color: darkred;
     margin: 0;
 }
+
+.face{
+    position: relative;
+}

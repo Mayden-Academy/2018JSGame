@@ -99,28 +99,65 @@ function orientation(player, direction) {
 function moveLeft($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
-        $player.animate({x: "-=" + distance}, time ,'linear');
+        $player.animate(
+            {x: "-=" + distance},
+            {duration: time,
+                easing: 'linear',
+                step: function(now, fx) {
+                    var left = $player.position().left
+                    if (left < 0) {
+                        console.log('you dead')
+                    }
+                }});
     }
 }
 
 function moveRight($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
-        $player.animate({x: "+=" + distance}, time ,'linear');
+        $player.animate({x: "+=" + distance},
+            {duration: time,
+                easing: 'linear',
+                step: function(now, fx) {
+                    var right = $player.position().left + $player.width()
+                    if (right > 800) {
+                        console.log('you dead')
+                    }
+                }});
     }
 }
 
 function moveUp($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
-        $player.animate({y: "-=" + distance}, time ,'linear');
+        $player.animate({y: "-=" + distance},{duration: time,
+            easing: 'linear',
+            step: function(now, fx) {
+
+                var top = $player.position().top
+
+                if ( top <  0) {
+                    console.log('you dead')
+                }
+            }});
     }
 }
 
 function moveDown($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
-        $player.animate({y: "+=" + distance}, time ,'linear');
+        $player.animate({y: "+=" + distance},{duration: time,
+            easing: 'linear',
+            step: function(now, fx) {
+
+                var down = $player.position().top + $player.height()
+
+                console.log(down)
+
+                if (down > 600) {
+                    console.log('you dead')
+                }
+            }});
     }
 }
 

@@ -81,13 +81,26 @@ function moveLeft($player) {
                         top = $player.attr('y'),
                         down = $player.position().top + $player.height()
 
-                    console.log(left);
                     var alive = false;
                     $('.path').each(function (x) {
                         alive =false
-                        if (left > this.getAttribute('x') && top > this.getAttribute('y') && down < (this.getAttribute('y') + this.getAttribute('height')) && right < (this.getAttribute('x') + this.getAttribute('width'))) {
+
+                        console.log($player)
+                        console.log('left: ' + left)
+                        console.log('this x: ' + this.getAttribute('x'))
+
+                        console.log('top: ' + top)
+                        console.log('this y: ' + this.getAttribute('y'))
+
+                        console.log('down: ' + down)
+                        console.log('this y + h : ' + (parseInt(this.getAttribute('y')) + parseInt(this.getAttribute('height'))))
+
+                        console.log('right: ' + right)
+                        console.log('this x + w: ' + (parseInt(this.getAttribute('x')) + parseInt(this.getAttribute('width'))))
+                        
+                        if (left > parseInt(this.getAttribute('x')) && top > parseInt(this.getAttribute('y')) && down < (parseInt(this.getAttribute('y')) + parseInt(this.getAttribute('height'))) && right < (parseInt(this.getAttribute('x')) + parseInt(this.getAttribute('width')))) {
                             alive = true;
-                            console.log('baaaaaa')
+                            console.log('alive left')
                         }
 
                     })

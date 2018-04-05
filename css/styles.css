@@ -6,7 +6,7 @@ body {
     font-family: 'Press Start 2P', cursive;
 }
 
-.container {
+#container {
     width: 1000px;
     height: 800px;
     margin: 0 auto;

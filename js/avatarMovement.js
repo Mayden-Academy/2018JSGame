@@ -129,6 +129,13 @@ function stopMovement(player) {
     $(player).stop()
 }
 
+function pauseGame(player1, player2) {
+    stopMovement(player1);
+    stopMovement(player2);
+    $(document).off("keydown", keyDownHandler);
+    $(document).off("keyup", keyUpHandler);
+}
+
 //event listener for player's avatar
 $(document).on("keydown", keyDownHandler);
 $(document).on("keyup", keyUpHandler);

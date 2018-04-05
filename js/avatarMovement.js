@@ -72,7 +72,7 @@ function moveLeft($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
         $player.animate(
-            {x: "-=" + distance},
+            {svgX: "-=" + distance},
             {duration: time,
                 easing: 'linear',
                 step: function(now, fx) {
@@ -87,7 +87,7 @@ function moveLeft($player) {
 function moveRight($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
-        $player.animate({x: "+=" + distance},
+        $player.animate({svgX: "+=" + distance},
             {duration: time,
                 easing: 'linear',
                 step: function(now, fx) {
@@ -102,12 +102,10 @@ function moveRight($player) {
 function moveUp($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
-        $player.animate({y: "-=" + distance},{duration: time,
+        $player.animate({svgY: "-=" + distance},{duration: time,
             easing: 'linear',
             step: function(now, fx) {
-
                 var top = $player.position().top
-
                 if ( top <  0) {
                     console.log('you dead')
                 }
@@ -118,7 +116,7 @@ function moveUp($player) {
 function moveDown($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
-        $player.animate({y: "+=" + distance},{duration: time,
+        $player.animate({svgY: "+=" + distance},{duration: time,
             easing: 'linear',
             step: function(now, fx) {
 
@@ -165,3 +163,5 @@ $(document).on('myCustomEvent', function () {
 $(document).on("keypress", function (){
         myCountdown();
 });
+
+

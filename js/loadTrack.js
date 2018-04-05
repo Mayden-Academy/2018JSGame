@@ -1,22 +1,20 @@
 $('.trackLink').click(function(e) {
-    var link = e.target.dataset.track
-        
-    if  (link === '1' && $('#track1').length === 0) {
-        $('#container').append($('<div>').load('includes/trackLayout1.html'))
-    } else if (link === '1' && $('#track1').length !== 0) {
-        $('.track').css('display', 'none')
-        $('#track1').css('display', 'block')
-    }
+    var trackNo = e.target.dataset.track,
+        trackElement = $('#track' + trackNo)
 
-    if  (link === '2' && $('#track2').length === 0) {
-        $('#container').append($('<div>').load('includes/trackLayout2.html'))  
-    } else if (link === '2' && $('#track2').length !== 0) {
-        $('.track').css('display', 'none')
-        $('#track2').css('display', 'block')
-    }
-
-    $('#splash').css('display', 'none')  
+    navigateLevels(trackElement, trackNo)
 })
+
+function navigateLevels (trackElement, trackNo) {
+    if  (trackElement.length === 0) {
+        $('#container').append($('<div>').load('includes/trackLayout' + trackNo + '.html'))
+    } else {
+        $('.track').css('display', 'none')
+        trackElement.css('display', 'block')
+    }
+
+    $('#splash').css('display', 'none')
+}
 
 $('body').on('click', '.trackReturn', function() {
     $('.track').css('display', 'none')

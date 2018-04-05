@@ -1,9 +1,8 @@
-var countdownStart = 3;
-var startGame = false;
-
 //gameplay variables
 var distance = 1000;
 var time = 3000;
+var countdownStart = 3;
+var startGame = false;
 
 var $playerA = $('#playerA');
 var $playerB = $('#playerB');
@@ -111,14 +110,12 @@ function myCountdown() {
             clearInterval(timer);
             $("#timerDiv").toggle();
             startGame = true;
-            console.log('at end of timer' + startGame);
             $(document).trigger('myCustomEvent');
         }
     }, 1000)
 }
 
 function playGame() {
-    console.log('you can play');
     $(document).on("keydown", keyDownHandler);
     $(document).on("keyup", keyUpHandler);
 }
@@ -130,6 +127,4 @@ $(document).on('myCustomEvent', function () {
 
 $(document).on("keypress", function (){
         myCountdown();
-        console.log('wait for countdown');
-        console.log('on keypress' + startGame);
 });

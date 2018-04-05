@@ -1,13 +1,18 @@
 $('.trackLink').click(function(e) {
-    var trackNo = e.target.getAttribute("data-track"),
-        trackElement = $('#track' + trackNo)
+    var trackNum = e.target.getAttribute('data-track'),
+        trackElement = $('#track' + trackNum)
 
-    navigateLevels(trackElement, trackNo)
+    navigateLevels(trackElement, trackNum)
 })
 
-function navigateLevels (trackElement, trackNo) {
+$('body').on('click', '.trackReturn', function() {
+    $('.track').css('display', 'none')
+    $('#splash').css('display', 'block')
+})
+
+function navigateLevels (trackElement, trackNum) {
     if  (trackElement.length === 0) {
-        $('#container').append($('<div id="track' + trackNo + '" class="track">').load('includes/trackLayout' + trackNo + '.html'))
+        $('#container').append($('<div id="track' + trackNum + '" class="track">').load('includes/trackLayout' + trackNum + '.html'))
     } else {
         $('.track').css('display', 'none')
         trackElement.css('display', 'block')
@@ -16,7 +21,3 @@ function navigateLevels (trackElement, trackNo) {
     $('#splash').css('display', 'none')
 }
 
-$('body').on('click', '.trackReturn', function() {
-    $('.track').css('display', 'none')
-    $('#splash').css('display', 'block')
-})

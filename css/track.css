@@ -1,0 +1,25 @@
+.track {
+    position: relative;
+}
+
+.track rect {
+    fill: #000000;
+}
+
+.track rect.path {
+    fill:#ffffff;
+}
+
+.track .finish {
+    fill: #ff1c1c;
+}
+
+.track button {
+    position: absolute;
+    bottom: 10px;
+    width: 100px;
+    left: 450px;
+}
+
+
+

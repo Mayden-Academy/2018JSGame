@@ -7,7 +7,7 @@ $('.trackLink').click(function(e) {
 
 function navigateLevels (trackElement, trackNo) {
     if  (trackElement.length === 0) {
-        $('#container').append($('<div>').load('includes/trackLayout' + trackNo + '.html'))
+        $('#container').append($('<div id="track' + trackNo + '" class="track">').load('includes/trackLayout' + trackNo + '.html'))
     } else {
         $('.track').css('display', 'none')
         trackElement.css('display', 'block')

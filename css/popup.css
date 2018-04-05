@@ -1,11 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Press Start 2P', cursive;
-}
-
 .restart {
     visibility: hidden;
     width: 800px;
@@ -18,12 +10,12 @@ body {
     background-color: #b3ff0f;
 }
 
-.restart h2  {
+.restart h2 {
     text-align: center;
     font-size: 2rem;
 }
 
-.restart h1  {
+.restart h1 {
     text-align: center;
     font-size: 5rem;
 }

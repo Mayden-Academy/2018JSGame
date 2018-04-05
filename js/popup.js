@@ -1,9 +1,10 @@
-$('.gameLevel').on('click', function () {
-    winnerPopup('MIKE')
+$('.gameLevel').on('collision', function (player) {
+    //hardcoding the winner - to be passed as part of the collision event
+    var player = 'Charlie'
+    winnerPopup(player)
 })
 
-//=======the above is to fire the event  =========
-//======delete all code above when inserted into project===
+//=======the above is to fire the event  (change collision to click for code review) =========
 
 $('body').on('click', '#btnRestart' , function() {
     $('#restart').removeClass('restartShow')

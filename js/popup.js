@@ -10,7 +10,6 @@ $('body').on('click', '#btnRestart' , function() {
     $('#restart').removeClass('restartShow')
     $('.track').css('display', 'none')
     $('#splash').css('display', 'block')
-
 })
 
 setInterval(function () {

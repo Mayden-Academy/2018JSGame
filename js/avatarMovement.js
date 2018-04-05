@@ -130,5 +130,6 @@ function stopMovement(player) {
 }
 
 //event listener for player's avatar
-document.addEventListener("keydown", keyDownHandler);
-document.addEventListener("keyup", keyUpHandler);
+$(document).on("keydown", keyDownHandler);
+$(document).on("keyup", keyUpHandler);
+

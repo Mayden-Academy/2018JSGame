@@ -6,11 +6,18 @@ body {
     font-family: 'Press Start 2P', cursive;
 }
 
-.container {
+main {
     width: 1000px;
     height: 800px;
     margin: 0 auto;
-    border: 1px solid black;
-    background: rgb(63,94,251);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,132,1) 100%);
+    border: 1px solid #000000;
+
+}
+
+.ie main {
+    display: block
+}
+
+.ie .splash {
+    background-color: #0000FF;
 }

@@ -14,3 +14,20 @@ body {
     background: rgb(63,94,251);
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,132,1) 100%);
 }
+
+.sqrBox {
+    position: absolute;
+    top: 50px;
+    left: 180px;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+
+.seconds {
+    font-size: 25rem;
+    color: darkred;
+    margin: 0;
+}

@@ -1,3 +1,7 @@
+var countdownStart = 3;
+var startGame = false;
+
+
 //player A variables
 var playerAx = 150;
 var playerAy = 150;
@@ -129,6 +133,41 @@ function stopMovement(player) {
     $(player).stop()
 }
 
-//event listener for player's avatar
-document.addEventListener("keydown", keyDownHandler);
-document.addEventListener("keyup", keyUpHandler);
+// //event listener for player's avatar
+// document.addEventListener("keydown", keyDownHandler);
+// document.addEventListener("keyup", keyUpHandler);
+
+function myCountdown() {
+    var timer = setInterval(function(){
+        if (countdownStart > 0) {
+            $("#timerP").text(countdownStart);
+            countdownStart--;
+        } else {
+            clearInterval(timer);
+            $("#timerDiv").toggle();
+            startGame = true;
+            console.log('at end of timer' + startGame);
+            $(document).trigger('myCustomEvent');
+        }
+    }, 1000)
+}
+
+function playGame() {
+    console.log('you can play')
+    $(document).on("keydown", keyDownHandler);
+    $(document).on("keyup", keyUpHandler);
+}
+
+$(document).on('myCustomEvent', function () {
+    playGame();
+    $(document).off("keypress");
+});
+
+
+$(document).on("keypress", function (){
+        myCountdown();
+        console.log('wait for countdown');
+        console.log('on keypress' + startGame);
+});
+
+

@@ -11,7 +11,7 @@ $('body').on('click', '#btnRestart' , function() {
 
 setInterval(function () {
     $('.won').toggleClass('wonEffect')
-}, 100)
+}, 150)
 
 
 function winnerPopup(playerWon) {

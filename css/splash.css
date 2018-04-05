@@ -1,11 +1,15 @@
 .splash {
     position: relative;
+    width: 1000px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,132,1) 100%);
 }
 
-.splash img {
+.splash .titleImage {
     display: block;
     width: 600px;
-    margin: 100px auto;
+    margin: 0 auto;
+    padding: 50px 0;
 }
 
 .splash .instructionsBtn {
@@ -39,13 +43,13 @@
 .splash .gameLevel img {
     display: block;
     width: 350px;
-    margin: 0 auto;
+    margin: 50px auto 20px auto;
     border: 1px solid #000000;
     border-radius: 5px;
 }
 
 .splash .gameLevel h2  {
-    margin: 20px auto;
+    margin: 0 auto;
     text-align: center;
     font-size: 2rem;
 }

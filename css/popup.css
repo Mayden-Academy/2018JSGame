@@ -28,7 +28,7 @@ body {
     font-size: 5rem;
 }
 
-.restart button {
+#btnRestart {
     font-family: 'Press Start 2P', cursive;
     font-size: 1.6rem;
     position: absolute;
@@ -38,13 +38,13 @@ body {
     background-color: #b3ff0f;
 }
 
-.restart button:hover {
+#btnRestart:hover {
     cursor: pointer;
     color: #ededed;
     text-shadow: 2px 2px 2px #000000, 2px -2px 2px #000000, -2px -2px 2px #000000, -2px 2px 2px #000000;
 }
 
-.restart button:active {
+#btnRestart:active {
     font-size: 1.5rem;
     outline: none;
 }
@@ -55,5 +55,5 @@ body {
 
 .wonEffect {
     color: red;
-    font-size: 6rem;
+    text-shadow: 2px 2px 2px #000000, 2px -2px 2px #000000, -2px -2px 2px #000000, -2px 2px 2px #000000;
 }

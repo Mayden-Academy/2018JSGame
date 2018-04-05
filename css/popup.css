@@ -1,0 +1,52 @@
+.restart {
+    visibility: hidden;
+    width: 800px;
+    height: 300px;
+    position: absolute;
+    padding: 30px;
+    left: 100px;
+    top: 100px;
+    border-radius: 5px;
+    background-color: #b3ff0f;
+}
+
+.restart h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.restart h1 {
+    text-align: center;
+    font-size: 5rem;
+}
+
+#btnRestart {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.6rem;
+    position: absolute;
+    width: 300px;
+    left: 240px;
+    top: 250px;
+    border: none;
+    background-color: #b3ff0f;
+}
+
+#btnRestart:hover {
+    cursor: pointer;
+    color: #ededed;
+    text-shadow: 2px 2px 2px #000000, 2px -2px 2px #000000, -2px -2px 2px #000000, -2px 2px 2px #000000;
+}
+
+#btnRestart:active {
+    font-size: 1.5rem;
+    outline: none;
+}
+
+.restartShow {
+    visibility: visible;
+}
+
+.wonEffect {
+    color: red;
+    text-shadow: 2px 2px 2px #000000, 2px -2px 2px #000000, -2px -2px 2px #000000, -2px 2px 2px #000000;
+}

@@ -101,6 +101,13 @@ function stopMovement(player) {
     player.stop()
 }
 
+function pauseGame(player1, player2) {
+    stopMovement(player1);
+    stopMovement(player2);
+    $(document).off("keydown", keyDownHandler);
+    $(document).off("keyup", keyUpHandler);
+}
+
 function myCountdown() {
     var timer = setInterval(function(){
         if (countdownStart > 0) {

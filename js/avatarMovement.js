@@ -1,50 +1,12 @@
 var countdownStart = 3;
 var startGame = false;
 
-
-// //player A variables
-// var playerAx = 150;
-// var playerAy = 150;
-// var playerAHeight = 50;
-// var playerAWidth = 50;
-// var playerAOrientation = 'E';
-//
-// //Player B variables
-// var playerBx = 550;
-// var playerBy = 550;
-// var playerBHeight = 50;
-// var playerBWidth = 50;
-// var playerBOrientation = 'W';
-
 //gameplay variables
 var distance = 1000;
 var time = 3000;
 
-var $playerA = $('#playerA')
-var $playerB = $('#playerB')
-
-// function drawPlayer(x, y, h, w, fill, playerName, orientation) {
-//     var element = "<rect class=" + playerName + "></rect>";
-//     $(element).appendTo('svg');
-//     $('.' + playerName).attr('x', x);
-//     $('.' + playerName).attr('y', y);
-//     $('.' + playerName).attr('height', h);
-//     $('.' + playerName).attr('width', w);
-//     $('.' + playerName).attr('fill', fill);
-//     $('.' + playerName).attr('id', playerName);
-//     $('.' + playerName).attr('orientation', orientation);
-//     console.log(element);
-//     return (element);
-//
-//     // rect.setAttributeNS(null, 'y', y);
-//     // rect.setAttributeNS(null, 'height', h);
-//     // rect.setAttributeNS(null, 'width', w);
-//     // rect.setAttributeNS(null, 'fill', fill);
-//     // rect.setAttributeNS(null, 'id', id);
-//     // rect.setAttributeNS(null, 'orientation', orientation);
-//     // document.getElementById('svgOne').appendChild(rect);
-//     // return document.getElementById(id);
-// }
+var $playerA = $('#playerA');
+var $playerB = $('#playerB');
 
 //  <-  37 = left arrow,  39 = right arrow , 38 = up arrow, 40 = down arrow
 //  <-  65 = A (left) ,  68 = D (right)  , 87 = W (up) , 83 = S (down)
@@ -140,10 +102,6 @@ function stopMovement(player) {
     player.stop()
 }
 
-// //event listener for player's avatar
-// document.addEventListener("keydown", keyDownHandler);
-// document.addEventListener("keyup", keyUpHandler);
-
 function myCountdown() {
     var timer = setInterval(function(){
         if (countdownStart > 0) {
@@ -165,22 +123,13 @@ function playGame() {
     $(document).on("keyup", keyUpHandler);
 }
 
-
-
 $(document).on('myCustomEvent', function () {
-    // //create players
-    // var playerA = drawPlayer(playerAx, playerAy, playerAHeight, playerAWidth, 'pink', 'playerA', playerAOrientation);
-    // var playerB = drawPlayer(playerBx, playerBy, playerBHeight, playerBWidth, 'blue', 'playerB', playerBOrientation);
-
     playGame();
     $(document).off("keypress");
 });
-
 
 $(document).on("keypress", function (){
         myCountdown();
         console.log('wait for countdown');
         console.log('on keypress' + startGame);
 });
-
-

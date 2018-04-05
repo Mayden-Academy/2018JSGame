@@ -76,11 +76,19 @@ function moveLeft($player) {
             {duration: time,
                 easing: 'linear',
                 step: function(now, fx) {
-                    var left = $player.attr('x')
+                    var left = $player.attr('x'),
+                        right = $player.position().left + $player.width(),
+                        top = $player.attr('y'),
+                        down = $player.position().top + $player.height()
+
                     console.log(left);
-                    if (left < 0) {
-                        console.log('you dead')
-                    }
+                    $('.path').each(function (x) {
+
+                        if (left < this.x || top < this.y || down > this.y + this.height || right > this.x + this.width) {
+                            console.log('good')
+                        }
+                    })
+
                 }});
     }
 }
@@ -136,6 +144,13 @@ function stopMovement(player) {
     player.stop()
 }
 
+function pauseGame(player1, player2) {
+    stopMovement(player1);
+    stopMovement(player2);
+    $(document).off("keydown", keyDownHandler);
+    $(document).off("keyup", keyUpHandler);
+}
+
 function myCountdown() {
     var timer = setInterval(function(){
         if (countdownStart > 0) {
@@ -164,5 +179,11 @@ $(document).on('myCustomEvent', function () {
 $(document).on("keypress", function (){
         myCountdown();
 });
+
+$('.path').each(function (x) {
+    console.log(this.x)
+    console.log(this.y)
+    console.log(this.width)
+})
 
 

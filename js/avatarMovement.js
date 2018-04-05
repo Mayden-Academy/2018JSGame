@@ -4,25 +4,25 @@ var playerAx = 150;
 var playerAy = 150;
 var playerAHeight = 50;
 var playerAWidth = 50;
-var playerBOrientation='E';
+var playerAOrientation='E';
 
 //Player B variables
 var playerBx = 550;
 var playerBy = 550;
 var playerBHeight = 50;
 var playerBWidth = 50;
-var playerAOrientation='w';
+var playerBOrientation='W';
 
 //create players
-var playerA = drawPlayer(playerAx, playerAy, playerAHeight, playerAWidth, 'pink', 'playerA');
-var playerB = drawPlayer(playerBx, playerBy, playerBHeight, playerBWidth, 'blue', 'playerB');
+var playerA = drawPlayer(playerAx, playerAy, playerAHeight, playerAWidth, 'pink', 'playerA', playerAOrientation);
+var playerB = drawPlayer(playerBx, playerBy, playerBHeight, playerBWidth, 'blue', 'playerB', playerBOrientation);
 
 //gameplay variables
 var distance = 1000;
 var time = 3000;
 
 
-function drawPlayer (x, y, h, w, fill, id) {
+function drawPlayer (x, y, h, w, fill, id, orientation) {
     var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
     rect.setAttributeNS(null, 'x', x);
     rect.setAttributeNS(null, 'y', y);
@@ -30,6 +30,7 @@ function drawPlayer (x, y, h, w, fill, id) {
     rect.setAttributeNS(null, 'width', w);
     rect.setAttributeNS(null, 'fill', fill);
     rect.setAttributeNS(null, 'id', id);
+    rect.setAttributeNS(null, 'orientation',orientation)
     document.getElementById('svgOne').appendChild(rect);
     return document.getElementById(id);
 }
@@ -43,36 +44,42 @@ function keyDownHandler(e) {
     switch(e.keyCode) {
         case 37:
             moveLeft($playerA);
-            playerAOrientation='W';
+            orientation(playerA,'W');
             break;
         case 39:
             moveRight($playerA);
-            playerAOrientation='E';
+            orientation(playerA,'E');
             break;
         case 38:
             moveUp($playerA);
             playerAOrientation='N';
+            orientation(playerA,'N');
             break;
         case 40:
             moveDown($playerA);
             playerAOrientation='S';
+            orientation(playerA,'S');
             break;
 
         case 65:
             moveLeft($playerB);
             playerBOrientation='W';
+            orientation(playerB,'W');
             break;
         case 68:
             moveRight($playerB);
             playerBOrientation='E';
+            orientation(playerB,'E');
             break;
         case 87:
             moveUp($playerB);
             playerBOrientation='N';
+            orientation(playerB,'N');
             break;
         case 83:
             moveDown($playerB);
             playerBOrientation='S';
+            orientation(playerB,'S');
             break;
         default:
     }
@@ -105,6 +112,10 @@ function moveLeft($player) {
     }
 }
 
+function orientation(player, direction) {
+        player.setAttributeNS(null, 'orientation',direction)
+}
+
 function moveRight($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
@@ -134,5 +145,4 @@ function stopMovement (player){
 
 //event listener for player's avatar
 document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false); 
-
+document.addEventListener("keyup", keyUpHandler, false);

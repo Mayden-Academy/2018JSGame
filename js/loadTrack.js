@@ -1,5 +1,5 @@
 $('.trackLink').click(function(e) {
-    var trackNo = e.target.dataset.track,
+    var trackNo = e.target.getAttribute("data-track"),
         trackElement = $('#track' + trackNo)
 
     navigateLevels(trackElement, trackNo)

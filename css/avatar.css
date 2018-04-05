@@ -5,8 +5,8 @@
 }
 
 .face img {
-    height: 100px;
     position: absolute;
+    height: 100px;
     left: 110px;
     z-index: 5;
     transform: rotate(280deg);

@@ -82,12 +82,17 @@ function moveLeft($player) {
                         down = $player.position().top + $player.height()
 
                     console.log(left);
+                    var alive = false;
                     $('.path').each(function (x) {
-
-                        if (left < this.x || top < this.y || down > this.y + this.height || right > this.x + this.width) {
-                            console.log('good')
+                        alive =false
+                        if (left > this.getAttribute('x') && top > this.getAttribute('y') && down < (this.getAttribute('y') + this.getAttribute('height')) && right < (this.getAttribute('x') + this.getAttribute('width'))) {
+                            alive = true;
+                            console.log('baaaaaa')
                         }
+
                     })
+
+                    console.log('am i alive? ' + alive);
 
                 }});
     }

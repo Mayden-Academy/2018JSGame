@@ -68,31 +68,103 @@ function orientation(player, direction) {
     player.attr('orientation', direction)
 }
 
+function deathDetection ($player) {
+
+    var left = parseInt($player.attr('x')),
+        right = left + parseInt($player.width()),
+        top = parseInt($player.attr('y')),
+        down = top + parseInt($player.height())
+
+    console.log('right: ' + right)
+    console.log('left: ' + left)
+
+    var alive = false,
+        skip
+
+    $('.path').each(function (x) {
+
+        if (skip) {
+            return false
+        }
+
+        var boxLeft = parseInt(this.getAttribute('x')),
+            boxRight = boxLeft + parseInt(this.getAttribute('width')),
+            boxTop = parseInt(this.getAttribute('y')),
+            boxBot = boxTop + parseInt(this.getAttribute('height'))
+
+        if (
+            left < boxLeft ||
+            top < boxTop ||
+            down > boxBot ||
+            right > boxRight
+        ) {
+            alive = false
+        }
+
+        if (
+            left > boxLeft &&
+            top > boxTop &&
+            down < boxBot &&
+            right < boxRight
+        ) {
+            alive = true;
+            skip = true;
+        }
+
+    })
+
+    console.log(alive ? 'You are alive' : 'You are dead');
+    $($player).trigger('death');
+}
+
 function moveLeft($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
-        $player.animate({x: "-=" + distance}, time ,'linear');
+        $player.animate(
+            {svgX: "-=" + distance},
+            {duration: time,
+                easing: 'linear',
+                step: function() {
+                    deathDetection($player)
+                }
+            })
     }
 }
 
 function moveRight($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
-        $player.animate({x: "+=" + distance}, time ,'linear');
+        $player.animate({svgX: "+=" + distance},
+            {duration: time,
+                easing: 'linear',
+                step: function() {
+                    deathDetection($player)
+                }
+            })
     }
 }
 
 function moveUp($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
-        $player.animate({y: "-=" + distance}, time ,'linear');
+        $player.animate({svgY: "-=" + distance},{duration: time,
+            easing: 'linear',
+            step: function() {
+                deathDetection($player)
+            }
+        })
     }
 }
 
 function moveDown($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
-        $player.animate({y: "+=" + distance}, time ,'linear');
+        $player.animate({svgY: "+=" + distance},{duration: time,
+            easing: 'linear',
+            step: function() {
+                deathDetection($player)
+            }
+        })
     }
 }
 
@@ -112,10 +184,11 @@ function myCountdown() {
     var timer = setInterval(function(){
         if (countdownStart > 0) {
             $("#timerP").text(countdownStart);
+            console.log(countdownStart);
             countdownStart--;
         } else {
             clearInterval(timer);
-            $("#timerDiv").toggle();
+            $("#timerDiv").css('display', 'none');
             startGame = true;
             $(document).trigger('myCustomEvent');
         }
@@ -135,3 +208,11 @@ $(document).on('myCustomEvent', function () {
 $(document).on("keypress", function (){
         myCountdown();
 });
+
+$('.path').each(function (x) {
+    console.log(this.x)
+    console.log(this.y)
+    console.log(this.width)
+})
+
+

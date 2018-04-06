@@ -139,13 +139,11 @@ $(document).on("keypress", function (){
         myCountdown();
 });
 
-
 function orientUpDown($player, $car) {
     $player.attr('width', 35);
     $player.attr('height', 70);
     $car.attr('width',35);
     $car.attr('height',70);
-
 }
 
 function orientRightLeft($player,$car) {

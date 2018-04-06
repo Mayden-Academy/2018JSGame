@@ -12,9 +12,9 @@
     transform: rotate(280deg);
 }
 
-/*.car img {*/
-    /*height: 100px;*/
-/*}*/
+.car img {
+    height: 100px;
+}
 
 .left {
      transform: rotate(180deg);

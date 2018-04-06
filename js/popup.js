@@ -9,11 +9,6 @@ function deathCheck(playerA, playerB) {
     }
 }
 
-// function reachedFinishLine(playerA, playerB) {
-//     x="960" y="680" width="40" height="100"
-//     x="950" y="700" width="100" height="100"
-// }
-
 function callWinner (playerA, playerB) {
     pauseGame('playerA', 'playerB')
     var winnerByDeathCheck = deathCheck(playerA, playerB)

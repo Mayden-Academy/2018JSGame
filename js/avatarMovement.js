@@ -12,6 +12,8 @@ var $playerA = $('#playerA'),
     $faceA = $('#faceA'),
     $faceB = $('#faceB')
 
+
+
 //  <-  37 = left arrow,  39 = right arrow , 38 = up arrow, 40 = down arrow
 //  <-  65 = A (left) ,  68 = D (right)  , 87 = W (up) , 83 = S (down)
 function keyDownHandler(e) {
@@ -19,36 +21,36 @@ function keyDownHandler(e) {
         case 37:
             //playerA
             moveLeft($playerA);
-            orientRightLeft($playerA, $carA, $faceA, "../assets/goldCar.svg");
+            orientRightLeft($playerA, $carA, $faceA, "assets/goldCar.svg");
             break;
         case 39:
             moveRight($playerA);
-            orientRightLeft($playerA, $carA, $faceA, "../assets/goldCar.svg");
+            orientRightLeft($playerA, $carA, $faceA, "assets/goldCar.svg");
             break;
         case 38:
             moveUp($playerA);
-            orientUpDown($playerA,$carA, $faceA, "../assets/goldCarDown.svg");
+            orientUpDown($playerA,$carA, $faceA, "assets/goldCarDown.svg");
             break;
         case 40:
             moveDown($playerA);
-            orientUpDown($playerA,$carA, $faceA, "../assets/goldCarDown.svg");
+            orientUpDown($playerA,$carA, $faceA, "assets/goldCarDown.svg");
             break;
             //playerB
         case 65:
             moveLeft($playerB);
-            orientRightLeft($playerB, $carB, $faceB, "../assets/whiteCar.svg");
+            orientRightLeft($playerB, $carB, $faceB, "assets/whiteCar.svg");
             break;
         case 68:
             moveRight($playerB);
-            orientRightLeft($playerB, $carB, $faceB, "../assets/whiteCar.svg");
+            orientRightLeft($playerB, $carB, $faceB, "assets/whiteCar.svg");
             break;
         case 87:
             moveUp($playerB);
-            orientUpDown($playerB,$carB, $faceB, "../assets/whiteCarUp.svg");
+            orientUpDown($playerB,$carB, $faceB, "assets/whiteCarUp.svg");
             break;
         case 83:
             moveDown($playerB);
-            orientUpDown($playerB,$carB, $faceB, "../assets/whiteCarUp.svg");
+            orientUpDown($playerB,$carB, $faceB, "assets/whiteCarUp.svg");
             break;
     }
 }
@@ -118,6 +120,12 @@ function myCountdown() {
 }
 
 function playGame() {
+    $playerA = $('#playerA')
+    $playerB = $('#playerB')
+    $carA = $('#carA')
+    $carB = $('#carB')
+    $faceA = $('#faceA')
+    $faceB = $('#faceB')
     $(document).on("keydown", keyDownHandler);
     $(document).on("keyup", keyUpHandler);
 }

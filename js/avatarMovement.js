@@ -68,6 +68,54 @@ function orientation(player, direction) {
     player.attr('orientation', direction)
 }
 
+function deathDetection ($player) {
+
+    var left = parseInt($player.attr('x')),
+        right = left + parseInt($player.width()),
+        top = parseInt($player.attr('y')),
+        down = top + parseInt($player.height())
+
+    console.log('right: ' + right)
+    console.log('left: ' + left)
+
+    var alive = false,
+        skip
+
+    $('.path').each(function (x) {
+
+        if (skip) {
+            return false
+        }
+
+        var boxLeft = parseInt(this.getAttribute('x')),
+            boxRight = boxLeft + parseInt(this.getAttribute('width')),
+            boxTop = parseInt(this.getAttribute('y')),
+            boxBot = boxTop + parseInt(this.getAttribute('height'))
+
+
+        if (
+            left < boxLeft ||
+            top < boxTop ||
+            down > boxBot ||
+            right > boxRight
+        ) {
+            alive = false
+        }
+
+        if (
+            left > boxLeft &&
+            top > boxTop &&
+            down < boxBot &&
+            right < boxRight
+        ) {
+            alive = true;
+            skip = true;
+        }
+
+    })
+    console.log(alive ? 'You are alive' : 'You are dead');
+}
+
 function moveLeft($player) {
     if (!$player.hasClass('moving')) {
         $player.addClass('moving');
@@ -75,50 +123,10 @@ function moveLeft($player) {
             {svgX: "-=" + distance},
             {duration: time,
                 easing: 'linear',
-                step: function(now, fx) {
-                    var left = $player.attr('x'),
-                        right = left + parseInt($player.width()),
-                        top = $player.attr('y'),
-                        down = top + parseInt($player.height())
-
-                    var alive = false,
-                        skip
-                    $('.path').each(function (x) {
-
-                        if (skip) {
-                            return false
-                        }
-
-                        var boxLeft = parseInt(this.getAttribute('x')),
-                            boxRight = parseInt(this.getAttribute('x')) + parseInt(this.getAttribute('width')),
-                            boxTop = parseInt(this.getAttribute('y')),
-                            boxBot = parseInt(this.getAttribute('y')) + parseInt(this.getAttribute('height'))
-
-                        if (
-                            left < boxLeft ||
-                            top < boxTop ||
-                            down > boxBot ||
-                            right > boxRight
-                        ) {
-                            console.log('one condition killed you')
-                            alive = false
-                        }
-
-                        if (
-                            left > boxLeft &&
-                            top > boxTop &&
-                            down < boxBot &&
-                            right < boxRight
-                        ) {
-                            console.log('4 conditions kept you alive')
-                            alive = true;
-                            skip = true;
-                        }
-
-                    })
-                    console.log(alive ? 'You are alive' : 'You are dead');
-
-                }});
+                step: function() {
+                    deathDetection($player)
+                }
+            })
     }
 }
 
@@ -128,12 +136,10 @@ function moveRight($player) {
         $player.animate({svgX: "+=" + distance},
             {duration: time,
                 easing: 'linear',
-                step: function(now, fx) {
-                    var right = $player.position().left + $player.width()
-                    if (right > 1000) {
-                        console.log('you dead')
-                    }
-                }});
+                step: function() {
+                    deathDetection($player)
+                }
+            })
     }
 }
 
@@ -142,12 +148,10 @@ function moveUp($player) {
         $player.addClass('moving');
         $player.animate({svgY: "-=" + distance},{duration: time,
             easing: 'linear',
-            step: function(now, fx) {
-                var top = $player.position().top
-                if ( top <  0) {
-                    console.log('you dead')
-                }
-            }});
+            step: function() {
+                deathDetection($player)
+            }
+        })
     }
 }
 
@@ -156,15 +160,10 @@ function moveDown($player) {
         $player.addClass('moving');
         $player.animate({svgY: "+=" + distance},{duration: time,
             easing: 'linear',
-            step: function(now, fx) {
-
-                var down = $player.position().top + $player.height()
-
-
-                if (down > 800) {
-                    console.log('you dead')
-                }
-            }});
+            step: function() {
+                deathDetection($player)
+            }
+        })
     }
 }
 

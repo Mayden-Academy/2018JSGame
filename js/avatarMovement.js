@@ -8,6 +8,8 @@ var $playerA = $('#playerA');
 var $playerB = $('#playerB');
 var $carA = $('#carA');
 var $carB = $('#carB');
+var $faceA = $('#faceA');
+var $faceB = $('#faceB');
 
 //  <-  37 = left arrow,  39 = right arrow , 38 = up arrow, 40 = down arrow
 //  <-  65 = A (left) ,  68 = D (right)  , 87 = W (up) , 83 = S (down)
@@ -16,43 +18,43 @@ function keyDownHandler(e) {
         case 37:
             moveLeft($playerA);
             orientation($playerA,'W');
-            orientRightLeft($playerA, $carA);
+            orientRightLeft($playerA, $carA, $faceA, "../assets/goldCar.svg");
             break;
         case 39:
             moveRight($playerA);
             orientation($playerA,'E');
-            orientRightLeft($playerA, $carA);
+            orientRightLeft($playerA, $carA, $faceA, "../assets/goldCar.svg");
             break;
         case 38:
             moveUp($playerA);
             orientation($playerA,'N');
-            orientUpDown($playerA,$carA);
+            orientUpDown($playerA,$carA, $faceA, "../assets/goldCarDown.svg");
             break;
         case 40:
             moveDown($playerA);
             orientation($playerA,'S');
-            orientUpDown($playerA,$carA);
+            orientUpDown($playerA,$carA, $faceA, "../assets/goldCarDown.svg");
             break;
 
         case 65:
             moveLeft($playerB);
             orientation($playerB,'W');
-            orientRightLeft($playerB, $carB);
+            orientRightLeft($playerB, $carB, $faceB, "../assets/whiteCar.svg");
             break;
         case 68:
             moveRight($playerB);
             orientation($playerB,'E');
-            orientRightLeft($playerB, $carB);
+            orientRightLeft($playerB, $carB, $faceB, "../assets/whiteCar.svg");
             break;
         case 87:
             moveUp($playerB);
             orientation($playerB,'N');
-            orientUpDown($playerB,$carB);
+            orientUpDown($playerB,$carB, $faceB, "../assets/whiteCarUp.svg");
             break;
         case 83:
             moveDown($playerB);
             orientation($playerB,'S');
-            orientUpDown($playerB,$carB);
+            orientUpDown($playerB,$carB, $faceB, "../assets/whiteCarUp.svg");
             break;
     }
 }
@@ -139,16 +141,23 @@ $(document).on("keypress", function (){
         myCountdown();
 });
 
-function orientUpDown($player, $car) {
+function orientUpDown($player, $car, $face, $image) {
     $player.attr('width', 35);
     $player.attr('height', 70);
     $car.attr('width',35);
     $car.attr('height',70);
+    $car.attr('href', $image);
+    $face.attr('X',8);
+    $face.attr('Y',20);
+
 }
 
-function orientRightLeft($player,$car) {
+function orientRightLeft($player,$car,$face, $image) {
     $player.attr('width', 70);
     $player.attr('height', 35);
     $car.attr('width', 70);
     $car.attr('height', 35);
+    $car.attr('href', $image);
+    $face.attr('X',20);
+    $face.attr('Y',6);
 }

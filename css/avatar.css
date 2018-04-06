@@ -31,10 +31,3 @@
 .down {
     transform: rotate(90deg);
 }
-
-svg[orientation="N"].car,
-svg[orientation="S"].car{
-    transform: rotate(90deg);
-    height:70px;
-    widgth:35px;
-}

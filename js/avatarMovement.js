@@ -77,35 +77,46 @@ function moveLeft($player) {
                 easing: 'linear',
                 step: function(now, fx) {
                     var left = $player.attr('x'),
-                        right = $player.position().left + $player.width(),
+                        right = left + parseInt($player.width()),
                         top = $player.attr('y'),
-                        down = $player.position().top + $player.height()
+                        down = top + parseInt($player.height())
 
-                    var alive = false;
+                    var alive = false,
+                        skip
                     $('.path').each(function (x) {
-                        alive =false
 
-                        console.log($player)
-                        console.log('left: ' + left)
-                        console.log('this x: ' + this.getAttribute('x'))
+                        if (skip) {
+                            return false
+                        }
 
-                        console.log('top: ' + top)
-                        console.log('this y: ' + this.getAttribute('y'))
+                        var boxLeft = parseInt(this.getAttribute('x')),
+                            boxRight = parseInt(this.getAttribute('x')) + parseInt(this.getAttribute('width')),
+                            boxTop = parseInt(this.getAttribute('y')),
+                            boxBot = parseInt(this.getAttribute('y')) + parseInt(this.getAttribute('height'))
 
-                        console.log('down: ' + down)
-                        console.log('this y + h : ' + (parseInt(this.getAttribute('y')) + parseInt(this.getAttribute('height'))))
+                        if (
+                            left < boxLeft ||
+                            top < boxTop ||
+                            down > boxBot ||
+                            right > boxRight
+                        ) {
+                            console.log('one condition killed you')
+                            alive = false
+                        }
 
-                        console.log('right: ' + right)
-                        console.log('this x + w: ' + (parseInt(this.getAttribute('x')) + parseInt(this.getAttribute('width'))))
-                        
-                        if (left > parseInt(this.getAttribute('x')) && top > parseInt(this.getAttribute('y')) && down < (parseInt(this.getAttribute('y')) + parseInt(this.getAttribute('height'))) && right < (parseInt(this.getAttribute('x')) + parseInt(this.getAttribute('width')))) {
+                        if (
+                            left > boxLeft &&
+                            top > boxTop &&
+                            down < boxBot &&
+                            right < boxRight
+                        ) {
+                            console.log('4 conditions kept you alive')
                             alive = true;
-                            console.log('alive left')
+                            skip = true;
                         }
 
                     })
-
-                    console.log('am i alive? ' + alive);
+                    console.log(alive ? 'You are alive' : 'You are dead');
 
                 }});
     }

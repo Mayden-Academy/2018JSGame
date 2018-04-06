@@ -12,9 +12,9 @@
     transform: rotate(280deg);
 }
 
-.car img {
-    height: 100px;
-}
+/*.car img {*/
+    /*height: 100px;*/
+/*}*/
 
 .left {
      transform: rotate(180deg);
@@ -30,4 +30,11 @@
 
 .down {
     transform: rotate(90deg);
+}
+
+svg[orientation="N"].car,
+svg[orientation="S"].car{
+    transform: rotate(90deg);
+    height:70px;
+    widgth:35px;
 }

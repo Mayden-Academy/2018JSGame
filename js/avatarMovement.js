@@ -6,6 +6,8 @@ var startGame = false;
 
 var $playerA = $('#playerA');
 var $playerB = $('#playerB');
+var $carA = $('#carA');
+var $carB = $('#carB');
 
 //  <-  37 = left arrow,  39 = right arrow , 38 = up arrow, 40 = down arrow
 //  <-  65 = A (left) ,  68 = D (right)  , 87 = W (up) , 83 = S (down)
@@ -14,35 +16,43 @@ function keyDownHandler(e) {
         case 37:
             moveLeft($playerA);
             orientation($playerA,'W');
+            orientRightLeft($playerA, $carA);
             break;
         case 39:
             moveRight($playerA);
             orientation($playerA,'E');
+            orientRightLeft($playerA, $carA);
             break;
         case 38:
             moveUp($playerA);
             orientation($playerA,'N');
+            orientUpDown($playerA,$carA);
             break;
         case 40:
             moveDown($playerA);
             orientation($playerA,'S');
+            orientUpDown($playerA,$carA);
             break;
 
         case 65:
             moveLeft($playerB);
             orientation($playerB,'W');
+            orientRightLeft($playerB, $carB);
             break;
         case 68:
             moveRight($playerB);
             orientation($playerB,'E');
+            orientRightLeft($playerB, $carB);
             break;
         case 87:
             moveUp($playerB);
             orientation($playerB,'N');
+            orientUpDown($playerB,$carB);
             break;
         case 83:
             moveDown($playerB);
             orientation($playerB,'S');
+            orientUpDown($playerB,$carB);
             break;
     }
 }
@@ -130,3 +140,17 @@ $(document).on("keypress", function (){
 });
 
 
+function orientUpDown($player, $car) {
+    $player.attr('width', 35);
+    $player.attr('height', 70);
+    $car.attr('width',35);
+    $car.attr('height',70);
+
+}
+
+function orientRightLeft($player,$car) {
+    $player.attr('width', 70);
+    $player.attr('height', 35);
+    $car.attr('width', 70);
+    $car.attr('height', 35);
+}

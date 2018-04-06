@@ -4,14 +4,31 @@
     <meta charset="UTF-8">
     <title>Avatar Move</title>
     <link href="../css/styles.css" rel="stylesheet">
+    <link href="../css/track.css" rel="stylesheet">
 </head>
 <body>
-    <svg id="svgOne" xmlns="http://www.w3.org/2000/svg" width="800" height="600" class="svgbox">
-        <svg id="playerA" x="150" y="150" width="150" height="100">
+    <svg id="svgOne" xmlns="http://www.w3.org/2000/svg" width="1000" height="800" class="svgbox track">
+        <rect x="0" y="0" width="1000" height="800" />
+        <rect x="40" y="10" width="910" height="30" class="path" />
+        <rect x="0" y="10" width="40" height="30" class="finish" />
+        <rect x="260" y="10" width="30" height="200" class="path" />
+        <rect x="940" y="10" width="30" height="400" class="path" />
+        <rect x="20" y="400" width="950" height="30" class="path" />
+        <rect x="850" y="420" width="30" height="200" class="path" />
+        <rect x="760" y="600" width="120" height="30" class="path" />
+        <rect x="740" y="600" width="30" height="150" class="path" />
+        <rect x="20" y="400" width="30" height="380" class="path" />
+        <rect x="20" y="750" width="300" height="30" class="path" />
+        <rect x="280" y="725" width="360" height="30" class="path" />
+        <rect x="600" y="750" width="360" height="30" class="path" />
+        <rect x="960" y="750" width="40" height="30" class="finish" />
+        <rect x="50" y="200" width="240" height="30" class="path" />
+        <rect x="50" y="200" width="20" height="200" class="path" />
+        <svg id="playerA" x="0" y="10" width="150" height="100">
             <image id="carA" width="70" height="35" href="../assets/goldCar.svg" />
             <image id="faceA" width="20" height="20" href="../assets/charlie.png" x="20" y="6"/>
         </svg>
-        <svg id="playerB" x="550" y="550" width="150" height="100">
+        <svg id="playerB" x="950" y="750" width="150" height="100">
             <image id="carB" width="70" height="35" href="../assets/whiteCar.svg" />
             <image id="faceB" width="20" height="20" href="../assets/mike.png" x="30" y="6"/>
         </svg>

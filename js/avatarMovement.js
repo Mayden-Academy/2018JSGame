@@ -92,7 +92,6 @@ function deathDetection ($player) {
             boxTop = parseInt(this.getAttribute('y')),
             boxBot = boxTop + parseInt(this.getAttribute('height'))
 
-
         if (
             left < boxLeft ||
             top < boxTop ||

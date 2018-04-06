@@ -1,10 +1,21 @@
-$('.gameLevel').on('collision', function (player) {
-    //hardcoding the winner - to be passed as part of the collision event
-    var player = 'Charlie'
-    winnerPopup(player)
-})
+$('#playerA').on('death', deathCheck(playerA, playerB))
+$('#playerB').on('death',deathCheck(playerA, playerB))
 
-//=======the above is to fire the event  (change collision to click for code review) =========
+function deathCheck(playerA, playerB) {
+    if ( playerA === 'dead'  ) {
+        return playerB;
+    } else if  ( playerB === 'dead'  ){
+        return playerA;
+    }
+}
+
+function callWinner (playerA, playerB) {
+    pauseGame('playerA', 'playerB')
+    var winnerByDeathCheck = deathCheck(playerA, playerB)
+    var winnerByRace = reachedFinishLine(playerA, playerB)
+    winnerPopup(winnerByDeathCheck)
+    winnerPopup(winnerByRace)
+}
 
 $('body').on('click', '#btnRestart' , function() {
     $('#restart').removeClass('restartShow')

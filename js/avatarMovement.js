@@ -113,7 +113,9 @@ function deathDetection ($player) {
         }
 
     })
+
     console.log(alive ? 'You are alive' : 'You are dead');
+    $($player).trigger('death');
 }
 
 function moveLeft($player) {

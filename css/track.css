@@ -16,6 +16,7 @@
 
 .track button {
     position: absolute;
+    z-index: 20;
     bottom: 10px;
     width: 100px;
     left: 450px;

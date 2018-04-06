@@ -10,8 +10,6 @@ main {
     width: 1000px;
     height: 800px;
     margin: 0 auto;
-    border: 1px solid #000000;
-
 }
 
 .ie main {
@@ -20,4 +18,23 @@ main {
 
 .ie .splash {
     background-color: #0000FF;
+}
+
+.sqrBox {
+    position: absolute;
+    top: 50px;
+    left: 180px;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+}
+
+.seconds {
+    font-size: 25rem;
+    color: darkred;
+    margin: 0;
+}
+
+.face{
+    position: relative;
 }

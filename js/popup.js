@@ -1,10 +1,10 @@
-$('#playerA').on('death', deathCheck(playerA, playerB))
-$('#playerB').on('death',deathCheck(playerA, playerB))
+$('#playerA').on('death', deathCheckDisplay(playerA, playerB))
+$('#playerB').on('death',deathCheckDisplay(playerA, playerB))
 
-function deathCheck(playerA, playerB) {
-    if ( playerA === 'dead'  ) {
+function deathCheckDisplay(playerA, playerB) {
+    if ( playerA === 'dead' ) {
         return playerB;
-    } else if  ( playerB === 'dead'  ){
+    } else if  ( playerB === 'dead' ){
         return playerA;
     }
 }

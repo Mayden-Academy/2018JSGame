@@ -1,12 +1,25 @@
-$('#playerA').on('death', deathCheckDisplay(playerA, playerB))
-$('#playerB').on('death',deathCheckDisplay(playerA, playerB))
+$('#playerA').on('death', function(e, arg) {
+    console.log(e)
+    console.log(arg)
+    console.log('Death triggered AAAA!!!!!!!')
+})
 
-function deathCheckDisplay(playerA, playerB) {
-    if ( playerA === 'dead' ) {
-        return playerB;
-    } else if  ( playerB === 'dead' ){
-        return playerA;
-    }
+// $('#playerB').on('death',deathCheckDisplay(playerDead))
+
+$('#playerB').on('death',function (e, arg) {
+    console.log(e)
+    console.log(arg)
+    console.log('Death triggered BBBB!!!!!!!')
+})
+
+
+function deathCheckDisplay(playerDead) {
+    console.log(playerDead)
+    // if ( playerA === 'dead' ) {
+    //     return playerB;
+    // } else if  ( playerB === 'dead' ){
+    //     return playerA;
+    // }
 }
 
 function callWinner (playerA, playerB) {

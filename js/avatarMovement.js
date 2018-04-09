@@ -104,7 +104,8 @@ function deathDetection ($player) {
             down > boxBot ||
             right > boxRight
         ) {
-            alive = false
+            alive = false;
+            $($player).trigger('death', [$player]);
         }
 
         if (
@@ -120,7 +121,7 @@ function deathDetection ($player) {
     })
 
     console.log(alive ? 'You are alive' : 'You are dead');
-    $($player).trigger('death');
+    // $($player).trigger('death', [$player]);
 }
 
 function moveLeft($player) {

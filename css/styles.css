@@ -26,18 +26,16 @@ main {
     left: 180px;
     width: 500px;
     height: 500px;
-    border: 1px solid black;
     text-align: center;
     background-color: #0000FF;
 }
 
 .seconds {
     font-size: 25rem;
-    color: darkred;
+    color: #8B0000;
     margin: 0;
 }
 
-.face{
+.face {
     position: relative;
 }
-

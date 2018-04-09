@@ -1,5 +1,7 @@
 <button class="trackReturn" data-track="1">Return</button>
+
 <svg width="1000" height="800">
+    <!--<svg id="svgOne" xmlns="http://www.w3.org/2000/svg" width="1000" height="800" class="svgbox track">-->
     <rect x="0" y="0" width="1000" height="800"></rect>
     <rect x="40" y="10" width="910" height="100" class="path"></rect>
     <rect x="820" y="10" width="100" height="150" class="path"></rect>
@@ -17,9 +19,16 @@
     <rect x="960" y="680" width="40" height="100" class="finish"></rect>
     <rect x="50" y="200" width="260" height="50" class="path"></rect>
     <rect x="50" y="200" width="50" height="200" class="path"></rect>
+    
+    <svg id="playerA" class="player" x="0" y="10" width="150" height="100">
+        <image id="carA" width="70" height="35" href="assets/goldCar.svg" />
+        <image id="faceA" width="20" height="20" href="assets/charlie.png" x="20" y="6"/>
+    </svg>
+    <svg id="playerB" class="player" x="950" y="750" width="150" height="100">
+        <image id="carB" width="70" height="35" href="assets/whiteCar.svg" />
+        <image id="faceB" width="20" height="20" href="assets/mike.png" x="30" y="6"/>
+    </svg>
 
-    <rect class="player" id="playerA" fill="pink" x="150" y="150" width="50" height="50" orientation="N" />
-    <rect class="player" id="playerB" fill="green" x="550" y="550" width="50" height="50" orientation="N" />
 </svg>
 
 <div id="timerDiv" class="sqrBox Timer">

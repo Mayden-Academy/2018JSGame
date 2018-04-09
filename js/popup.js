@@ -1,5 +1,5 @@
 $('#playerA').on('death', function(e, arg) {
-    console.log(e)
+    // console.log(e)
     console.log(arg)
     console.log('Death triggered AAAA!!!!!!!')
 })
@@ -7,7 +7,7 @@ $('#playerA').on('death', function(e, arg) {
 // $('#playerB').on('death',deathCheckDisplay(playerDead))
 
 $('#playerB').on('death',function (e, arg) {
-    console.log(e)
+    // console.log(e)
     console.log(arg)
     console.log('Death triggered BBBB!!!!!!!')
 })

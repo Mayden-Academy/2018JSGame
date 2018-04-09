@@ -1,5 +1,5 @@
 //gameplay variables
-var distance = 1000,
+var distance = 700,
     time = 3000,
     countdownStart = 3,
     startGame = false
@@ -105,7 +105,7 @@ function deathDetection ($player) {
             right > boxRight
         ) {
             alive = false;
-            $($player).trigger('death', [$player]);
+            //$($player).trigger('death', [$player]);
         }
 
         if (
@@ -120,8 +120,10 @@ function deathDetection ($player) {
 
     })
 
-    console.log(alive ? 'You are alive' : 'You are dead');
-    // $($player).trigger('death', [$player]);
+    // console.log(alive ? 'You are alive' : 'You are dead');
+    if (!alive) {
+        $($player).trigger('death', [$player]);
+    }
 }
 
 function moveLeft($player) {

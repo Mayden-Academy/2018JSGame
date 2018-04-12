@@ -17,38 +17,38 @@ var $playerA = $('#playerA'),
 function keyDownHandler(e) {
     switch(e.keyCode) {
         case 37:
-            //playerA
-            moveLeft($playerA);
-            orientRightLeft($playerA, $carA, $faceA, "assets/goldCar.svg");
-            break;
-        case 39:
-            moveRight($playerA);
-            orientRightLeft($playerA, $carA, $faceA, "assets/goldCar.svg");
-            break;
-        case 38:
-            moveUp($playerA);
-            orientUpDown($playerA,$carA, $faceA, "assets/goldCarDown.svg");
-            break;
-        case 40:
-            moveDown($playerA);
-            orientUpDown($playerA,$carA, $faceA, "assets/goldCarDown.svg");
-            break;
-            //playerB
-        case 65:
+            //playerB: uses Arrows
             moveLeft($playerB);
             orientRightLeft($playerB, $carB, $faceB, "assets/whiteCar.svg");
             break;
-        case 68:
+        case 39:
             moveRight($playerB);
             orientRightLeft($playerB, $carB, $faceB, "assets/whiteCar.svg");
             break;
-        case 87:
+        case 38:
             moveUp($playerB);
             orientUpDown($playerB,$carB, $faceB, "assets/whiteCarUp.svg");
             break;
-        case 83:
+        case 40:
             moveDown($playerB);
             orientUpDown($playerB,$carB, $faceB, "assets/whiteCarUp.svg");
+            break;
+            //playerA: uses AWSD
+        case 65:
+            moveLeft($playerA);
+            orientRightLeft($playerA, $carA, $faceA, "assets/goldCar.svg");
+            break;
+        case 68:
+            moveRight($playerA);
+            orientRightLeft($playerA, $carA, $faceA, "assets/goldCar.svg");
+            break;
+        case 87:
+            moveUp($playerA);
+            orientUpDown($playerA,$carA, $faceA, "assets/goldCarDown.svg");
+            break;
+        case 83:
+            moveDown($playerA);
+            orientUpDown($playerA,$carA, $faceA, "assets/goldCarDown.svg");
             break;
     }
 }
@@ -59,13 +59,13 @@ function keyUpHandler(e) {
         case 39:
         case 38:
         case 40:
-            stopMovement($playerA);
+            stopMovement($playerB);
             break;
         case 65:
         case 68:
         case 87:
         case 83:
-            stopMovement($playerB);
+            stopMovement($playerA);
             break;
     }
 }

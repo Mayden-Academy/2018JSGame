@@ -27,11 +27,11 @@ function keyDownHandler(e) {
             break;
         case 38:
             moveUp($playerB);
-            orientUpDown($playerB,$carB, $faceB, "assets/whiteCarUp.svg");
+            orientUpDown($playerB, $carB, $faceB, "assets/whiteCarUp.svg");
             break;
         case 40:
             moveDown($playerB);
-            orientUpDown($playerB,$carB, $faceB, "assets/whiteCarUp.svg");
+            orientUpDown($playerB, $carB, $faceB, "assets/whiteCarUp.svg");
             break;
             //playerA: uses AWSD
         case 65:
@@ -44,11 +44,11 @@ function keyDownHandler(e) {
             break;
         case 87:
             moveUp($playerA);
-            orientUpDown($playerA,$carA, $faceA, "assets/goldCarDown.svg");
+            orientUpDown($playerA, $carA, $faceA, "assets/goldCarDown.svg");
             break;
         case 83:
             moveDown($playerA);
-            orientUpDown($playerA,$carA, $faceA, "assets/goldCarDown.svg");
+            orientUpDown($playerA, $carA, $faceA, "assets/goldCarDown.svg");
             break;
     }
 }
@@ -77,54 +77,60 @@ function orientation(player, direction) {
 function deathDetection ($player) {
 
     var left = parseInt($player.attr('x')),
-        right = left + parseInt($player.width()),
+        right = left + parseInt($player.attr('width')),
         top = parseInt($player.attr('y')),
-        down = top + parseInt($player.height())
+        down = top + parseInt($player.attr('height'))
 
-    console.log('right: ' + right)
-    console.log('left: ' + left)
-
-    var alive = false,
-        skip
+    var alive = true,
+        skip = false
 
     $('.path').each(function (x) {
-
-        if (skip) {
-            return false
-        }
-
         var boxLeft = parseInt(this.getAttribute('x')),
             boxRight = boxLeft + parseInt(this.getAttribute('width')),
             boxTop = parseInt(this.getAttribute('y')),
             boxBot = boxTop + parseInt(this.getAttribute('height'))
 
-        if (
-            left < boxLeft ||
-            top < boxTop ||
-            down > boxBot ||
-            right > boxRight
-        ) {
-            alive = false;
-            //$($player).trigger('death', [$player]);
-        }
+            // console.log('boxLeft: ' + boxLeft)
+            // console.log('boxRight: ' + boxRight)
+            // console.log('left: ' + left)
+            // console.log('right: ' + right)
 
-        if (
-            left > boxLeft &&
-            top > boxTop &&
-            down < boxBot &&
-            right < boxRight
-        ) {
-            alive = true;
-            skip = true;
-        }
+          if (skip) {
+              return false
+          }
+
+          alive = false
+
+          if (
+              left > boxLeft &&
+              top > boxTop &&
+              down < boxBot &&
+              right < boxRight
+          ) {
+              alive = true;
+              skip = true;
+          }
+
+        // if (
+        //     left < boxLeft ||
+        //     top < boxTop ||
+        //     down > boxBot ||
+        //     right > boxRight
+        // ) {
+        //     alive = false;
+        //     // $($player).trigger('death');
+        // }
 
     })
 
-    // console.log(alive ? 'You are alive' : 'You are dead');
+
+
+    console.log(alive ? 'You are alive' : 'You are dead');
     if (!alive) {
-        $($player).trigger('death', [$player]);
+        $($player).trigger('death');
     }
 }
+
 
 function moveLeft($player) {
     if (!$player.hasClass('moving')) {
@@ -236,7 +242,7 @@ function orientUpDown($player, $car, $face, $image) {
 }
 
 
-function orientRightLeft($player,$car,$face, $image) {
+function orientRightLeft($player, $car, $face, $image) {
     $player.attr('width', 70);
     $player.attr('height', 35);
     $car.attr('width', 70);

@@ -1,33 +1,36 @@
-$('#playerA').on('death', function(e, arg) {
-    // console.log(e)
-    console.log(arg[0].id)
-    console.log('Death triggered AAAA!!!!!!!')
-})
-
-// $('#playerB').on('death',deathCheckDisplay(playerDead))
-
-$('#playerB').on('death',function (e, arg) {
-    // console.log(e)
-    console.log(arg[0].id)
-    console.log('Death triggered BBBB!!!!!!!')
+$('#playerA').on('death', function(e) {
+    console.log(`Player A ID: ${e.target.id}`)
+    callWinner(e.target.id)
 })
 
 
-function deathCheckDisplay(playerDead) {
-    console.log(playerDead)
-    // if ( playerA === 'dead' ) {
-    //     return playerB;
-    // } else if  ( playerB === 'dead' ){
-    //     return playerA;
-    // }
-}
 
-function callWinner (playerA, playerB) {
-    pauseGame('playerA', 'playerB')
-    var winnerByDeathCheck = deathCheck(playerA, playerB)
-    var winnerByRace = reachedFinishLine(playerA, playerB)
-    winnerPopup(winnerByDeathCheck)
-    winnerPopup(winnerByRace)
+$('#playerB').on('death',function (e) {
+    console.log(`Player B ID: ${e.target.id}`)
+    callWinner(e.target.id)
+})
+
+
+// function deathCheckDisplay(playerDead) {
+//     console.log(playerDead) //=> event
+//     // console.log(playerDead.target)
+//     // if ( playerA === 'dead' ) {
+//     //     return playerB;
+//     // } else if  ( playerB === 'dead' ){
+//     //     return playerA;
+//     // }
+// }
+
+function callWinner (deadPlayer) {
+    var winner = deadPlayer === 'playerA' ? 'playerB' : 'playerA'
+    console.log(`Winner: ${winner}`)
+    winnerPopup(winner)
+
+    // pauseGame('playerA', 'playerB')
+    // var winnerByDeathCheck = deathCheck(playerA, playerB)
+    // var winnerByRace = reachedFinishLine(playerA, playerB)
+    // winnerPopup(winnerByDeathCheck)
+    // winnerPopup(winnerByRace)
 }
 
 $('body').on('click', '#btnRestart' , function() {
@@ -48,4 +51,3 @@ function winnerPopup(playerWon) {
             $('<h1 class="won">' + playerWon + '</h1>').insertAfter('#popup')
         }, 500)
 }
-

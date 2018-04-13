@@ -123,14 +123,11 @@ function deathDetection ($player) {
 
     })
 
-
-
     console.log(alive ? 'You are alive' : 'You are dead');
     if (!alive) {
         $($player).trigger('death');
     }
 }
-
 
 function moveLeft($player) {
     if (!$player.hasClass('moving')) {
